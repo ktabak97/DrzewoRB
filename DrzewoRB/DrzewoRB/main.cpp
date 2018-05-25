@@ -1,5 +1,7 @@
 #include "Header.hpp"
 
+
+
 int main()
 {
 	int wybor;
@@ -9,26 +11,21 @@ int main()
 		
 		cin >> wybor;
 		tree tree1;
+		ifstream input;
+		input.open("data.txt");
+		
 		switch (wybor)
 		{
 		case 1:
-
-
-			tree1.insertRBT(31);
-			tree1.insertRBT(24);
-			tree1.insertRBT(23);
-			tree1.insertRBT(12);
-			tree1.insertRBT(2);
-			tree1.insertRBT(9);
-			tree1.insertRBT(18);
-			tree1.insertRBT(13);
-			tree1.insertRBT(8);
-			tree1.insertRBT(3);
-			tree1.insertRBT(7);
-			tree1.insertRBT(33);
-
+			int liczba;
+			while (input >> liczba)
+			{
+				tree1.add(liczba);
+			}
+			tree1.add(777);
 			tree1.paintvoid();
 			tree1.displayvoid();
+			tree1.savevoid();
 			break;
 		case 2:
 			return 0;
