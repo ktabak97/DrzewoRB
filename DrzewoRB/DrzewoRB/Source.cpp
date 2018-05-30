@@ -1,7 +1,7 @@
 #include "Header.hpp"
 
 
-tree::tree()
+tree::tree() //konstruktor drzewa, opisanie straznika
 {
 	Sentinel.left = &Sentinel;
 	Sentinel.right = &Sentinel;
@@ -12,13 +12,13 @@ tree::tree()
 	DEBUG_LOG("tree - konstruktor domyslny");
 }
 
-tree::~tree()
+tree::~tree() //destruktor drzewa
 {
 	destructTree(root);
 	DEBUG_LOG("tree - destruktor");
 }
 
-void tree::destructTree(node * root)
+void tree::destructTree(node * root) //usuwanie wszystkich wezlow drzewa
 {
 	if (root != &Sentinel)
 	{
@@ -28,7 +28,7 @@ void tree::destructTree(node * root)
 	}
 }
 
-void tree::rightRotation(node * ref_root)
+void tree::rightRotation(node * ref_root) //rotacja w prawo
 {
 	node * node, *parent;
 	node = ref_root->left;
@@ -58,7 +58,7 @@ void tree::rightRotation(node * ref_root)
 }
 
 
-void tree::leftRotation(node * ref_root)
+void tree::leftRotation(node * ref_root) //rotacja w lewo
 {
 	node * node, *parent;
 	node = ref_root->right;
@@ -88,7 +88,7 @@ void tree::leftRotation(node * ref_root)
 }
 
 
-void tree::add(int key)
+void tree::add(int key) //dodawanie elementu
 {
 	node *A, *B;
 	A = new node;
@@ -176,7 +176,7 @@ void tree::add(int key)
 	root->color = 'B';
 }
 
-void tree::display(struct node *root)
+void tree::display(struct node *root) //wyswietlanie proste
 {
 	if (root != &Sentinel)
 	{
@@ -191,7 +191,7 @@ void tree::displayvoid()
 	display(root);
 }
 
-void tree::paint(struct node *root, int distance)
+void tree::paint(struct node *root, int distance) //wyswietlanie graficzne
 {
 	int place = 10;
 
@@ -215,7 +215,7 @@ void tree::paintvoid()
 	paint(root, 0);
 }
 
-void tree::save(node*root)
+void tree::save(node*root) //zapisywanie do pliku
 {
 	ofstream out;
 	out.open("save.txt", ios::out | ios::app);

@@ -1,7 +1,7 @@
 #pragma once
-#ifndef HEADER_HPP
+#ifndef HEADER_HPP 
 #define HEADER_HPP
-#ifdef _DEBUG
+#ifdef _DEBUG  //kontrola wywolania konstruktorow
 #define DEBUG_LOG(a) cout << __FILE__ << "(" << __LINE__ << "): " << a << endl <<endl;
 #else
 #define DEBUG_LOG(a)
@@ -14,7 +14,7 @@
 
 using namespace std;
 
-struct node
+struct node //struktura wezla
 {
 	node * left;
 	node * right;
@@ -23,7 +23,7 @@ struct node
 	char color;
 };
 
-class tree
+class tree //klasa drzewa
 {
 public:
 	node * root;

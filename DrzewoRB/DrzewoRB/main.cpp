@@ -1,7 +1,6 @@
 #include "Header.hpp"
 
 
-
 int main()
 {
 	int wybor;
@@ -22,7 +21,6 @@ int main()
 			{
 				tree1.add(liczba);
 			}
-			tree1.add(777);
 			tree1.paintvoid();
 			tree1.displayvoid();
 			tree1.savevoid();
